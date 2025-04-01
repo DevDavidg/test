@@ -1,0 +1,25 @@
+:root {
+  --brown-100: #706d54;
+  --brown-200: #706d54;
+  --brown-300: #c9b194;
+  --grey: #dbdbdb;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+h1 {
+  color: var(--grey);
+}
+
+#red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
