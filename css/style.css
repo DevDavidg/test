@@ -1,9 +1,10 @@
 :root {
-  --brown-100: #706d54;
+  --brown-100: #484637;
   --brown-200: #706d54;
   --brown-300: #c9b194;
   --grey: #dbdbdb;
   --white: #ffffff;
+  --black: #000;
 }
 
 * {
@@ -12,14 +13,41 @@
   padding: 0;
 }
 
-h1 {
-  color: var(--grey);
-}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #c9b194;
 
-#red {
-  color: red;
-}
+  h1 {
+    color: var(--brown-100);
+    text-transform: uppercase;
+    font-size: 24px;
+  }
 
-.blue {
-  color: blue;
+  p {
+    text-indent: 25px;
+    line-height: 20px;
+    text-align: justify;
+    margin: 20px 0;
+  }
+
+  #main-header {
+    .main-navigation {
+      a {
+        text-decoration: none;
+        color: var(--brown-100);
+        font-size: 16px;
+        font-variant: small-caps;
+        &:visited {
+          color: var(--grey);
+        }
+        &:hover {
+          color: #706d54;
+        }
+      }
+    }
+  }
+
+  .center-image {
+    text-align: center;
+  }
 }
