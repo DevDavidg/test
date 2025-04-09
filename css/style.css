@@ -1,47 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+
 :root {
-  --brown-100: #484637;
-  --brown-200: #706d54;
-  --brown-300: #c9b194;
-  --grey: #dbdbdb;
-  --white: #ffffff;
-  --black: #000;
+  --color-primary: #5c3c2b; /* Marrón Oscuro (fondo y texto) */
+  --color-secondary: #c39456; /* Bronce (detalles metálicos) */
+  --color-accent: #d4b882; /* Dorado claro (textos destacados) */
+  --color-background: #e6d6bb; /* Fondo claro del papel antiguo */
+  --color-text: #2e241b; /* Color oscuro para textos generales */
+  --color-border: #ab8f6d; /* Líneas decorativas del documento */
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  font-family: "Old Standard TT", serif;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #c9b194;
+  background-color: var(--color-background);
 
-  h1 {
-    color: var(--brown-100);
-    text-transform: uppercase;
-    font-size: 24px;
-  }
-
-  p {
-    text-indent: 25px;
-    line-height: 20px;
-    text-align: justify;
-    margin: 20px 0;
+  .container {
+    width: 1200px;
+    margin: 0 auto;
   }
 
   #main-header {
-    .main-navigation {
-      a {
-        text-decoration: none;
-        color: var(--brown-100);
-        font-size: 16px;
-        font-variant: small-caps;
-        &:visited {
-          color: var(--grey);
-        }
-        &:hover {
-          color: #706d54;
+    height: 60px;
+    border-bottom: var(--color-border) 1px solid;
+    h1 {
+      width: 100%;
+    }
+    nav {
+      width: 100%;
+
+      ul {
+        list-style: none;
+        li {
+          a {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -49,5 +46,26 @@ body {
 
   .center-image {
     text-align: center;
+  }
+
+  .banner-home,
+  .banner-characters,
+  .banner-media {
+    height: 600px;
+    background-image: url("/assets/images/banner.jpg");
+    align-content: center;
+    background-size: contain;
+    background-attachment: scroll;
+    h2 {
+      text-align: center;
+      color: var(--color-background);
+      font-size: 52px;
+    }
+  }
+  .banner-characters {
+    background-image: url("/assets/images/banner2.png");
+  }
+  .banner-media {
+    background-image: url("/assets/images/banner3.jpg");
   }
 }
