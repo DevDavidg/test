@@ -91,10 +91,9 @@ body {
   }
 
   #main-header {
-    display: flex;
+    display: block;
     height: 80px;
     border-bottom: 2px solid var(--color-neon-purple);
-    align-items: center;
     position: relative;
     background: linear-gradient(
       to right,
@@ -106,6 +105,7 @@ body {
     width: 100%;
     padding: 0 20px;
     z-index: 100;
+    text-align: right;
 
     h1 {
       display: none;
@@ -115,34 +115,39 @@ body {
       width: 60px;
       filter: hue-rotate(240deg) saturate(150%) brightness(120%);
       transition: all 0.5s ease;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
+    }
 
-      &:hover {
-        transform: scale(1.1);
-        filter: hue-rotate(300deg) saturate(200%) brightness(150%);
-        animation: pulse 2s infinite;
-      }
+    img:hover {
+      transform: scale(1.1);
+      filter: hue-rotate(300deg) saturate(200%) brightness(150%);
+      animation: pulse 2s infinite;
     }
 
     nav {
-      width: 100%;
+      width: max-content;
       height: 100%;
-      display: flex;
-      align-items: center;
+      display: inline-block;
       position: relative;
-      justify-content: flex-end;
+      text-align: right;
       padding-right: 30px;
 
       ul {
-        display: flex;
+        display: inline-block;
         height: 100%;
-        justify-content: flex-end;
         list-style: none;
-        align-items: center;
         position: relative;
-        gap: 30px;
+        text-align: right;
+        padding-top: 30px;
 
         li {
           position: relative;
+          display: inline-block;
+          margin-left: 30px;
 
           a {
             text-decoration: none;
@@ -223,9 +228,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    text-align: center;
     margin-bottom: 50px;
     border-bottom: 2px solid var(--color-neon-purple);
 
@@ -261,6 +265,8 @@ body {
         inset 0 0 20px rgba(59, 130, 246, 0.3);
       text-transform: uppercase;
       animation: pulse 4s infinite alternate;
+      display: inline-block;
+      margin-top: 300px;
     }
   }
 
@@ -401,9 +407,9 @@ body {
       var(--color-neon-blue)
     );
     color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
     font-size: 24px;
     cursor: pointer;
     z-index: 1000;
@@ -449,4 +455,232 @@ body {
 ::selection {
   background-color: var(--color-neon-purple);
   color: var(--white);
+}
+
+.invention-map-container {
+  position: relative;
+  margin: 40px auto;
+}
+
+.invention-map-container img {
+  border: 4px solid var(--color-neon-purple);
+  transition: all 0.3s ease;
+}
+
+.invention-map-container figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--color-neon-blue);
+  text-align: center;
+}
+
+.inventions-map-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.inventions-map-section p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1.1em;
+}
+
+.tesla-achievements {
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.tesla-achievements h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.8em;
+  color: var(--color-neon-purple);
+  text-transform: uppercase;
+}
+
+.column-container {
+  margin: 0 -15px;
+  font-size: 0;
+}
+
+.float-column {
+  display: inline-block;
+  vertical-align: top;
+  width: 33.33%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.float-column h4 {
+  color: var(--color-neon-blue);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-neon-purple);
+  font-size: 1.2em;
+}
+
+.float-column p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  text-align: left;
+  border-left: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.float-column p::first-letter {
+  font-size: inherit;
+  font-weight: normal;
+  color: inherit;
+  margin-right: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Multiple backgrounds implementation */
+.multi-bg-section {
+  position: relative;
+  padding: 40px 20px;
+  margin: 50px 0;
+  /* First background: gradient */
+  background-image: linear-gradient(
+      135deg,
+      rgba(18, 11, 26, 0.9),
+      rgba(37, 99, 235, 0.7)
+    ),
+    /* Second background: pattern */
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%238b5cf6' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    /* Third background: image */ url("/assets/images/banner3.jpg");
+  background-position: center center, center center, bottom center;
+  background-size: cover, auto, cover;
+  background-repeat: no-repeat, repeat, no-repeat;
+  color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.multi-bg-section h3 {
+  color: var(--color-neon-blue);
+  text-shadow: 0 0 10px var(--color-neon-purple);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.multi-bg-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+  background: rgba(2, 6, 23, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: none;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+/* CSS Sprites */
+.sprite-icons {
+  background-image: url("/assets/images/tesla-sprites.svg");
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.sprite-icons.bulb {
+  background-position: 0 0;
+}
+
+.sprite-icons.current {
+  background-position: -40px 0;
+}
+
+.sprite-icons.coil {
+  background-position: -80px 0;
+}
+
+.sprite-icons.wireless {
+  background-position: -120px 0;
+}
+
+/* Responsive improvements for columns */
+@media (max-width: 768px) {
+  .float-column {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.tesla-sprite-section {
+  margin: 50px 0;
+  padding: 30px;
+  background-color: rgba(37, 99, 235, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--color-neon-purple);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tesla-sprite-section h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-neon-blue);
+  font-size: 1.5em;
+}
+
+.sprite-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sprite-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--color-text);
+  font-size: 1.1em;
+}
+
+.sprite-list li .sprite-icons {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sprite-list li:last-child {
+  border-bottom: none;
+}
+
+/* Adjust the main layout for better flow */
+main {
+  display: block;
+}
+
+article {
+  display: block;
+}
+
+/* Enhanced address element styling */
+address {
+  font-style: normal;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-neon-purple);
+  margin-top: 30px;
+}
+
+address a {
+  display: inline-block;
+  margin: 0 10px;
 }
