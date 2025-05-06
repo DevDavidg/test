@@ -114,6 +114,50 @@
       <a href="#top" class="scroll-top-btn">
         <span class="sr-only">Volver arriba</span>
       </a>
+
+      <section class="inventions-map-section">
+        <h3>Inventos y Conceptos Revolucionarios</h3>
+        <p>
+          Selecciona cualquier área de la imagen para conocer más sobre los
+          inventos de Tesla:
+        </p>
+
+        <figure class="center-image invention-map-container">
+          <img
+            src="/assets/images/images.jpg"
+            width="400px"
+            alt="Inventos de Tesla"
+            usemap="#tesla-inventions-map"
+          />
+          <figcaption>
+            Haz clic en las diferentes áreas para obtener más información
+          </figcaption>
+        </figure>
+
+        <map name="tesla-inventions-map">
+          <area
+            shape="rect"
+            coords="100,50,300,150"
+            alt="Bobina Tesla"
+            href="#bobinatesla"
+            title="Bobina Tesla"
+          />
+          <area
+            shape="circle"
+            coords="200,200,50"
+            alt="Corriente Alterna"
+            href="#corrientealterna"
+            title="Corriente Alterna"
+          />
+          <area
+            shape="poly"
+            coords="50,250,100,300,150,250,100,200"
+            alt="Rayo de la Muerte"
+            href="#rayodelamuerte"
+            title="Rayo de la Muerte"
+          />
+        </map>
+      </section>
       <footer>
         <a href="mailto:jhondoe@test.com?subject=un%20mensaje">Enviar Correo</a>
         <a href="https://wa.me/541170030947">Mensaje</a>
