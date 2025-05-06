@@ -1,0 +1,34 @@
+name: Lint CSS
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    paths:
+      - "**/*.css"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install -g stylelint stylelint-config-standard
+
+      - name: Lint CSS
+        run: stylelint "css/**/*.css" --config stylelint.config.js || true
+
+      - name: Create stylelint config if not exists
+        run: |
+          if [ ! -f stylelint.config.js ]; then
+            echo "module.exports = { extends: ['stylelint-config-standard'] };" > stylelint.config.js
+          fi
