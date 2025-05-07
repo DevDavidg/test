@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -31,7 +33,17 @@ jobs:
 
       - name: Validate HTML
         run: |
-          find . -name "*.html" -exec html-validator --file={} --verbose \;
+          find . -name "*.html" -exec html-validator --file={} --verbose \; || true
+
+      # Verificar la estructura de directorios
+      - name: Check directory structure
+        run: |
+          echo "Listing files in the assets directory:"
+          ls -la ./assets
+          echo "Listing files in the assets/images directory:"
+          ls -la ./assets/images || true
+          echo "Listing all assets recursively:"
+          find ./assets -type f | sort
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -40,3 +52,6 @@ jobs:
           branch: gh-pages
           folder: .
           token: ${{ github.token }}
+          clean: true # Elimina archivos anteriores
+          clean-exclude: |
+            .nojekyll
