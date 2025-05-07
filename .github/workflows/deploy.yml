@@ -39,11 +39,16 @@ jobs:
       - name: Check directory structure
         run: |
           echo "Listing files in the assets directory:"
-          ls -la ./assets
+          ls -la ./assets || echo "Assets directory not found"
           echo "Listing files in the assets/images directory:"
-          ls -la ./assets/images || true
+          ls -la ./assets/images || echo "Images directory not found"
           echo "Listing all assets recursively:"
-          find ./assets -type f | sort
+          find ./assets -type f | sort || echo "No assets found"
+          echo "Verifying CSS files:"
+          find ./css -type f -name "*.css" | xargs cat | grep -n "/assets" || echo "No absolute paths in CSS"
+
+      - name: Create .nojekyll file
+        run: touch .nojekyll
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
