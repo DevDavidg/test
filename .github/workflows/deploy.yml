@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -35,9 +36,33 @@ jobs:
         run: |
           find . -name "*.html" -exec html-validator --file={} --verbose \; || true
 
+      # Verificar la existencia de los archivos específicos
+      - name: Check specific files
+        run: |
+          echo "Verificando archivos específicos..."
+
+          # Verificar archivos de descarga
+          echo "Verificando assets/downloads:"
+          ls -la ./assets/downloads/ || echo "Carpeta downloads no encontrada"
+          [ -f "./assets/downloads/comic_batman.pdf" ] && echo "✓ comic_batman.pdf existe" || echo "✕ comic_batman.pdf NO existe"
+          [ -f "./assets/downloads/comic_batman.pptx" ] && echo "✓ comic_batman.pptx existe" || echo "✕ comic_batman.pptx NO existe"
+
+          # Verificar archivos de imágenes
+          echo "Verificando assets/images:"
+          ls -la ./assets/images/ || echo "Carpeta images no encontrada"
+          [ -f "./assets/images/icons/logo.png" ] && echo "✓ logo.png existe" || echo "✕ logo.png NO existe"
+          [ -f "./assets/images/background.png" ] && echo "✓ background.png existe" || echo "✕ background.png NO existe"
+          [ -f "./assets/images/banner.jpg" ] && echo "✓ banner.jpg existe" || echo "✕ banner.jpg NO existe"
+          [ -f "./assets/images/banner2.png" ] && echo "✓ banner2.png existe" || echo "✕ banner2.png NO existe" 
+          [ -f "./assets/images/banner3.jpg" ] && echo "✓ banner3.jpg existe" || echo "✕ banner3.jpg NO existe"
+          [ -f "./assets/images/images.jpg" ] && echo "✓ images.jpg existe" || echo "✕ images.jpg NO existe"
+          [ -f "./assets/images/tesla-sprites.svg" ] && echo "✓ tesla-sprites.svg existe" || echo "✕ tesla-sprites.svg NO existe"
+
       # Verificar la estructura de directorios
       - name: Check directory structure
         run: |
+          echo "Listing root directory files:"
+          ls -la
           echo "Listing files in the assets directory:"
           ls -la ./assets || echo "Assets directory not found"
           echo "Listing files in the assets/images directory:"
@@ -47,15 +72,43 @@ jobs:
           echo "Verifying CSS files:"
           find ./css -type f -name "*.css" | xargs cat | grep -n "/assets" || echo "No absolute paths in CSS"
 
+      # Crear el archivo .nojekyll antes de copiar
       - name: Create .nojekyll file
         run: touch .nojekyll
 
+      # Asegurar que los assets estén presentes
+      - name: Ensure assets directory is included
+        run: |
+          mkdir -p .deploy-temp
+
+          # Copiar cada carpeta individualmente para asegurar su inclusión
+          echo "Copiando archivos a carpeta temporal para despliegue..."
+
+          # Copiar assets y su estructura
+          mkdir -p .deploy-temp/assets
+          cp -R assets/images .deploy-temp/assets/ || echo "Error copiando assets/images"
+          cp -R assets/downloads .deploy-temp/assets/ || echo "Error copiando assets/downloads"
+
+          # Copiar el resto de archivos/directorios necesarios
+          cp -R css .deploy-temp/ || echo "Error copiando css"
+          cp -R .github .deploy-temp/ || echo "Error copiando .github"
+          cp *.html .deploy-temp/ || echo "Error copiando archivos HTML"
+          cp *.js .deploy-temp/ || true
+          cp .nojekyll .deploy-temp/ || echo "Error copiando .nojekyll"
+
+          # Verificar lo que se copió a la carpeta temporal
+          echo "Contenido de la carpeta temporal para despliegue:"
+          ls -la .deploy-temp/
+          echo "Archivos en assets:"
+          find .deploy-temp/assets -type f | sort || echo "No se encontraron assets en la carpeta temporal"
+
+      # Desplegar usando nuestra carpeta temporal con todos los assets
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .
+          folder: .deploy-temp
           token: ${{ github.token }}
           clean: true # Elimina archivos anteriores
           clean-exclude: |
