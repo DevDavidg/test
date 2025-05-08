@@ -3,40 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Biografía y logros de Nikola Tesla, ingeniero e inventor revolucionario"
+    />
     <link rel="stylesheet" href="css/style.css" />
-
     <title>La Historia de Nikola Tesla</title>
   </head>
 
   <body>
     <div class="container">
       <header id="main-header">
-        <img src="assets/images/icons/logo.png" alt="logo" />
-        <h1>La Brillante Historia de Nikola Tesla</h1>
-        <nav class="main-navigation">
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="characters.html">Personajes</a></li>
-            <li><a href="sections/multimedia.html">Multimedia</a></li>
-            <li>
-              <a href="https://www.davinci.edu.ar" target="_blank"
-                >Mira donde se trabajo</a
-              >
-            </li>
-          </ul>
-        </nav>
+        <div class="header-container">
+          <div class="logo-container">
+            <a href="index.html" aria-label="Inicio">
+              <img
+                src="assets/images/icons/logo.png"
+                alt="Logo Tesla"
+                width="60"
+                height="60"
+              />
+            </a>
+          </div>
+          <h1>La Brillante Historia de Nikola Tesla</h1>
+          <nav class="main-navigation" aria-label="Navegación principal">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="#personajes">Personajes</a></li>
+              <li><a href="#multimedia">Multimedia</a></li>
+              <li>
+                <a
+                  href="https://www.davinci.edu.ar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Mira donde se trabajó
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
+
       <div class="banner-home">
         <h2>Acerca de Nikola Tesla</h2>
       </div>
-      <main>
+
+      <main id="main-content">
         <article>
-          <section>
+          <section id="biografia">
             <figure class="center-image">
               <img
                 src="assets/images/images.jpg"
-                width="400px"
-                alt="Nikola Tesla"
+                width="400"
+                height="auto"
+                alt="Retrato de Nikola Tesla"
               />
             </figure>
 
@@ -58,8 +79,8 @@
             </p>
           </section>
 
-          <section>
-            <h2 class="blue" id="red">El Legado de Tesla</h2>
+          <section id="legado">
+            <h2>El Legado de Tesla</h2>
 
             <p>
               Tras su muerte, Nikola Tesla fue reconocido como uno de los genios
@@ -71,14 +92,14 @@
             </p>
           </section>
 
-          <section class="tesla-achievements clearfix">
+          <section id="logros" class="tesla-achievements clearfix">
             <h3>Logros y Contribuciones</h3>
 
             <div class="column-container">
               <div class="float-column">
                 <h4>
-                  <span class="sprite-icons coil"></span>Inventos
-                  Revolucionarios
+                  <span class="sprite-icons coil" aria-hidden="true"></span>
+                  Inventos Revolucionarios
                 </h4>
                 <p>
                   La bobina de Tesla, el motor de inducción AC y sus más de 300
@@ -90,8 +111,8 @@
 
               <div class="float-column">
                 <h4>
-                  <span class="sprite-icons current"></span>Guerra de las
-                  Corrientes
+                  <span class="sprite-icons current" aria-hidden="true"></span>
+                  Guerra de las Corrientes
                 </h4>
                 <p>
                   Tesla defendió el sistema de corriente alterna (AC) frente al
@@ -103,7 +124,8 @@
 
               <div class="float-column">
                 <h4>
-                  <span class="sprite-icons wireless"></span>Legado Científico
+                  <span class="sprite-icons wireless" aria-hidden="true"></span>
+                  Legado Científico
                 </h4>
                 <p>
                   Aunque muchos de sus proyectos quedaron inconclusos, sus
@@ -115,7 +137,7 @@
             </div>
           </section>
 
-          <section class="multi-bg-section">
+          <section id="vision" class="multi-bg-section">
             <h3>La Visión Futurista de Tesla</h3>
             <p>
               Tesla imaginó un mundo donde la energía sería gratuita y accesible
@@ -132,172 +154,266 @@
             <h3>Áreas de Innovación</h3>
             <ul class="sprite-list">
               <li>
-                <span class="sprite-icons bulb"></span> Iluminación y energía
+                <span class="sprite-icons bulb" aria-hidden="true"></span>
+                Iluminación y energía
               </li>
               <li>
-                <span class="sprite-icons current"></span> Sistemas eléctricos
-                avanzados
+                <span class="sprite-icons current" aria-hidden="true"></span>
+                Sistemas eléctricos avanzados
               </li>
               <li>
-                <span class="sprite-icons coil"></span> Fenómenos
-                electromagnéticos
+                <span class="sprite-icons coil" aria-hidden="true"></span>
+                Fenómenos electromagnéticos
               </li>
               <li>
-                <span class="sprite-icons wireless"></span> Transmisión
-                inalámbrica
+                <span class="sprite-icons wireless" aria-hidden="true"></span>
+                Transmisión inalámbrica
               </li>
             </ul>
           </aside>
         </article>
+
+        <section id="personajes">
+          <h2>Personajes Relacionados con Tesla</h2>
+          <figure class="center-image">
+            <img
+              src="assets/images/images.jpg"
+              width="400"
+              height="auto"
+              alt="Nikola Tesla y contemporáneos"
+            />
+          </figure>
+          <nav aria-label="Navegación de personajes" class="personajes-nav">
+            <ul class="personajes-lista">
+              <li>
+                <a href="#nikolatesla" class="personaje-link"
+                  ><span class="personaje-icono">⚡</span>Nikola Tesla</a
+                >
+              </li>
+              <li>
+                <a href="#thomasedison" class="personaje-link"
+                  ><span class="personaje-icono">💡</span>Thomas Edison</a
+                >
+              </li>
+              <li>
+                <a href="#georgewestinghouse" class="personaje-link"
+                  ><span class="personaje-icono">🏭</span>George Westinghouse</a
+                >
+              </li>
+              <li>
+                <a href="#jpMorgan" class="personaje-link"
+                  ><span class="personaje-icono">💰</span>J.P. Morgan</a
+                >
+              </li>
+              <li>
+                <a href="#marktwain" class="personaje-link"
+                  ><span class="personaje-icono">📚</span>Mark Twain</a
+                >
+              </li>
+              <li>
+                <a href="#guglielmomarconi" class="personaje-link"
+                  ><span class="personaje-icono">📡</span>Guglielmo Marconi</a
+                >
+              </li>
+              <li>
+                <a href="#wardencliffetower" class="personaje-link"
+                  ><span class="personaje-icono">🗼</span>Torre Wardenclyffe</a
+                >
+              </li>
+              <li>
+                <a href="#corrientealterna" class="personaje-link"
+                  ><span class="personaje-icono">⚡</span>Corriente Alterna</a
+                >
+              </li>
+              <li>
+                <a href="#rayodelamuerte" class="personaje-link"
+                  ><span class="personaje-icono">☠️</span>Rayo de la Muerte</a
+                >
+              </li>
+              <li>
+                <a href="#bobinatesla" class="personaje-link"
+                  ><span class="personaje-icono">🧲</span>Bobina de Tesla</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <hr />
+          <dl>
+            <dt id="nikolatesla">Nikola Tesla</dt>
+            <dd>
+              Ingeniero e inventor conocido por desarrollar la corriente
+              alterna. Tesla era un genio excéntrico que soñó con la transmisión
+              inalámbrica de energía, inventando dispositivos revolucionarios
+              que cambiaron el mundo.
+            </dd>
+            <dt id="thomasedison">Thomas Edison</dt>
+            <dd>
+              Inventor y empresario rival de Tesla. Promotor de la corriente
+              continua (DC), se opuso firmemente a la corriente alterna (AC)
+              impulsada por Tesla.
+            </dd>
+            <dt id="georgewestinghouse">George Westinghouse</dt>
+            <dd>
+              Empresario e inventor que apoyó a Tesla, financiando y promoviendo
+              el desarrollo de la corriente alterna, fundamental para la
+              electrificación moderna.
+            </dd>
+            <dt id="jpMorgan">J.P. Morgan</dt>
+            <dd>
+              Magnate financiero que inicialmente apoyó económicamente el
+              proyecto de la Torre Wardenclyffe, pero luego retiró su apoyo por
+              diferencias estratégicas con Tesla.
+            </dd>
+            <dt id="marktwain">Mark Twain</dt>
+            <dd>
+              Escritor famoso y amigo cercano de Tesla. Admiraba profundamente
+              el trabajo de Tesla, y ambos compartían largas charlas sobre
+              ciencia y sociedad.
+            </dd>
+            <dt id="guglielmomarconi">Guglielmo Marconi</dt>
+            <dd>
+              Inventor conocido por su trabajo en la radio, cuya tecnología se
+              basó significativamente en patentes previas de Tesla.
+            </dd>
+            <dt id="wardencliffetower">Torre Wardenclyffe</dt>
+            <dd>
+              Proyecto monumental ideado por Tesla para transmitir energía
+              eléctrica inalámbrica a grandes distancias. Fue abandonado tras la
+              pérdida del financiamiento de Morgan.
+            </dd>
+            <dt id="corrientealterna">Corriente Alterna</dt>
+            <dd>
+              Sistema eléctrico desarrollado por Tesla, fundamental para la
+              distribución moderna de electricidad gracias a su eficiencia en
+              largas distancias.
+            </dd>
+            <dt id="rayodelamuerte">Rayo de la Muerte</dt>
+            <dd>
+              Supuesto invento secreto de Tesla, un arma poderosa que podría
+              derribar aviones y destruir objetivos a distancia. Aunque nunca se
+              confirmó su existencia, contribuyó al aura misteriosa de Tesla.
+            </dd>
+            <dt id="bobinatesla">Bobina de Tesla</dt>
+            <dd>
+              Dispositivo que genera altos voltajes y corrientes alternas,
+              conocido por sus impresionantes descargas eléctricas y utilizado
+              para investigar la transmisión inalámbrica de energía.
+            </dd>
+          </dl>
+        </section>
+
+        <section id="inventos" class="inventions-section">
+          <h3>Inventos y Conceptos Revolucionarios</h3>
+          <p class="inventos-intro">
+            Explora los principales inventos y conceptos de Tesla:
+          </p>
+
+          <div class="inventos-grid">
+            <div class="invento-card" id="invento-bobina">
+              <div class="invento-icon">🧲</div>
+              <h4>Bobina de Tesla</h4>
+              <p>
+                Dispositivo de alta frecuencia y voltaje creado para
+                experimentar con fenómenos electromagnéticos.
+              </p>
+              <a href="#bobinatesla" class="invento-link">Ver detalles</a>
+            </div>
+
+            <div class="invento-card" id="invento-corriente">
+              <div class="invento-icon">⚡</div>
+              <h4>Corriente Alterna</h4>
+              <p>
+                Sistema de distribución de energía que permitió transmitir
+                electricidad a largas distancias de manera eficiente.
+              </p>
+              <a href="#corrientealterna" class="invento-link">Ver detalles</a>
+            </div>
+
+            <div class="invento-card" id="invento-rayo">
+              <div class="invento-icon">☠️</div>
+              <h4>Rayo de la Muerte</h4>
+              <p>
+                Arma teórica de energía dirigida que Tesla afirmaba podría
+                derribar aviones a gran distancia.
+              </p>
+              <a href="#rayodelamuerte" class="invento-link">Ver detalles</a>
+            </div>
+
+            <div class="invento-card" id="invento-torre">
+              <div class="invento-icon">🗼</div>
+              <h4>Torre Wardenclyffe</h4>
+              <p>
+                Instalación diseñada para transmitir energía de forma
+                inalámbrica por todo el planeta.
+              </p>
+              <a href="#wardencliffetower" class="invento-link">Ver detalles</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="multimedia">
+          <h2>Recursos Multimedia</h2>
+          <figure class="center-image">
+            <img
+              src="assets/images/images.jpg"
+              width="400"
+              height="auto"
+              alt="Nikola Tesla en su laboratorio"
+            />
+          </figure>
+          <div class="downloads-container">
+            <h3>Descargas</h3>
+            <div class="downloads-grid">
+              <a
+                href="assets/downloads/tesla_biografia.pdf"
+                download
+                class="download-btn pdf-btn"
+              >
+                <span class="download-icon">📄</span>
+                <span class="download-text">Biografía completa en PDF</span>
+              </a>
+              <a
+                href="assets/images/images.jpg"
+                download="nikola_tesla.jpg"
+                class="download-btn img-btn"
+              >
+                <span class="download-icon">🖼️</span>
+                <span class="download-text">Imagen de Nikola Tesla</span>
+              </a>
+              <a
+                href="assets/downloads/tesla.pptx"
+                download
+                class="download-btn ppt-btn"
+              >
+                <span class="download-icon">📊</span>
+                <span class="download-text">Presentación sobre Tesla</span>
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <a href="#top" class="scroll-top-btn">
-        <span class="sr-only">Volver arriba</span>
+      <a href="#top" class="scroll-top-btn" aria-label="Volver arriba">
+        <div class="scroll-icon"></div>
+        <div class="scroll-text">Volver</div>
       </a>
+
       <footer>
         <address>
-          <a href="mailto:jhondoe@test.com?subject=un%20mensaje"
+          <a href="mailto:contacto@teslahistoria.com?subject=Información"
             >Enviar Correo</a
           >
-          <a href="https://wa.me/541170030947">Mensaje</a>
+          <a
+            href="https://wa.me/541170030947"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Mensaje WhatsApp</a
+          >
         </address>
+        <p class="copyright">
+          &copy; David Guillen. Todos los derechos reservados.
+        </p>
       </footer>
     </div>
-
-    <section>
-      <figure class="center-image">
-        <img src="assets/images/images.jpg" width="400px" alt="Nikola Tesla" />
-      </figure>
-      <ul>
-        <li><a href="#nikolatesla">Nikola Tesla</a></li>
-        <li><a href="#thomasedison">Thomas Edison</a></li>
-        <li><a href="#georgewestinghouse">George Westinghouse</a></li>
-        <li><a href="#jpMorgan">J.P. Morgan</a></li>
-        <li><a href="#marktwain">Mark Twain</a></li>
-        <li><a href="#guglielmomarconi">Guglielmo Marconi</a></li>
-        <li><a href="#wardencliffetower">Torre Wardenclyffe</a></li>
-        <li><a href="#corrientealterna">Corriente Alterna</a></li>
-        <li><a href="#rayodelamuerte">Rayo de la Muerte</a></li>
-        <li><a href="#bobinatesla">Bobina de Tesla</a></li>
-      </ul>
-      <hr />
-      <dl>
-        <dt id="nikolatesla">Nikola Tesla</dt>
-        <dd>
-          Ingeniero e inventor conocido por desarrollar la corriente alterna.
-          Tesla era un genio excéntrico que soñó con la transmisión inalámbrica
-          de energía, inventando dispositivos revolucionarios que cambiaron el
-          mundo.
-        </dd>
-        <dt id="thomasedison">Thomas Edison</dt>
-        <dd>
-          Inventor y empresario rival de Tesla. Promotor de la corriente
-          continua (DC), se opuso firmemente a la corriente alterna (AC)
-          impulsada por Tesla.
-        </dd>
-        <dt id="georgewestinghouse">George Westinghouse</dt>
-        <dd>
-          Empresario e inventor que apoyó a Tesla, financiando y promoviendo el
-          desarrollo de la corriente alterna, fundamental para la
-          electrificación moderna.
-        </dd>
-        <dt id="jpMorgan">J.P. Morgan</dt>
-        <dd>
-          Magnate financiero que inicialmente apoyó económicamente el proyecto
-          de la Torre Wardenclyffe, pero luego retiró su apoyo por diferencias
-          estratégicas con Tesla.
-        </dd>
-        <dt id="marktwain">Mark Twain</dt>
-        <dd>
-          Escritor famoso y amigo cercano de Tesla. Admiraba profundamente el
-          trabajo de Tesla, y ambos compartían largas charlas sobre ciencia y
-          sociedad.
-        </dd>
-        <dt id="guglielmomarconi">Guglielmo Marconi</dt>
-        <dd>
-          Inventor conocido por su trabajo en la radio, cuya tecnología se basó
-          significativamente en patentes previas de Tesla.
-        </dd>
-        <dt id="wardencliffetower">Torre Wardenclyffe</dt>
-        <dd>
-          Proyecto monumental ideado por Tesla para transmitir energía eléctrica
-          inalámbrica a grandes distancias. Fue abandonado tras la pérdida del
-          financiamiento de Morgan.
-        </dd>
-        <dt id="corrientealterna">Corriente Alterna</dt>
-        <dd>
-          Sistema eléctrico desarrollado por Tesla, fundamental para la
-          distribución moderna de electricidad gracias a su eficiencia en largas
-          distancias.
-        </dd>
-        <dt id="rayodelamuerte">Rayo de la Muerte</dt>
-        <dd>
-          Supuesto invento secreto de Tesla, un arma poderosa que podría
-          derribar aviones y destruir objetivos a distancia. Aunque nunca se
-          confirmó su existencia, contribuyó al aura misteriosa de Tesla.
-        </dd>
-        <dt id="bobinatesla">Bobina de Tesla</dt>
-        <dd>
-          Dispositivo que genera altos voltajes y corrientes alternas, conocido
-          por sus impresionantes descargas eléctricas y utilizado para
-          investigar la transmisión inalámbrica de energía.
-        </dd>
-      </dl>
-    </section>
-
-    <section class="inventions-map-section">
-      <h3>Inventos y Conceptos Revolucionarios</h3>
-      <p>
-        Selecciona cualquier área de la imagen para conocer más sobre los
-        inventos de Tesla:
-      </p>
-
-      <figure class="center-image invention-map-container">
-        <img
-          src="assets/images/images.jpg"
-          width="400px"
-          alt="Inventos de Tesla"
-          usemap="#tesla-inventions-map"
-        />
-        <figcaption>
-          Haz clic en las diferentes áreas para obtener más información
-        </figcaption>
-      </figure>
-
-      <map name="tesla-inventions-map">
-        <area
-          shape="rect"
-          coords="100,50,300,150"
-          alt="Bobina Tesla"
-          href="#bobinatesla"
-          title="Bobina Tesla"
-        />
-        <area
-          shape="circle"
-          coords="200,200,50"
-          alt="Corriente Alterna"
-          href="#corrientealterna"
-          title="Corriente Alterna"
-        />
-        <area
-          shape="poly"
-          coords="50,250,100,300,150,250,100,200"
-          alt="Rayo de la Muerte"
-          href="#rayodelamuerte"
-          title="Rayo de la Muerte"
-        />
-      </map>
-    </section>
-
-    <section>
-      <figure class="center-image">
-        <img src="assets/images/images.jpg" width="400px" alt="Nikola Tesla" />
-      </figure>
-      <a href="assets/downloads/comic_batman.pdf" download>Biografía en PDF</a>
-      <a href="assets/images/images.jpg" download="nikola_tesla.jpg">Imagen</a>
-      <a href="assets/downloads/comic_batman.pptx">Presentación Tesla</a>
-
-      <a href="../index.html#top">goto id index</a>
-    </section>
   </body>
 </html>
