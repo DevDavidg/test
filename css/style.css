@@ -406,6 +406,7 @@ body .logo-container img:hover {
 body .main-navigation {
   display: inline-block;
   vertical-align: middle;
+  width: 90%;
 }
 
 body .main-navigation ul {
@@ -1316,6 +1317,7 @@ body .scroll-top-btn:active {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
   animation-delay: calc(0.2s * var(--column-index, 0));
+  text-align: left;
 }
 
 .float-column:nth-child(1) {
