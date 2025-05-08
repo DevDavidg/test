@@ -1231,7 +1231,6 @@ body .scroll-top-btn:active {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
   animation-delay: calc(0.2s * var(--column-index, 0));
-  text-align: left;
 }
 
 .float-column:nth-child(1) {
@@ -1256,6 +1255,7 @@ body .scroll-top-btn:active {
   position: relative;
   transform-style: preserve-3d;
   transition: var(--transition-medium);
+  text-align: left;
 }
 
 .float-column h4::after {
